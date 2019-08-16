@@ -1,27 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { withContext } from '../context/checkboxesContext';
+import Card from './Card';
 
-class Content extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			// data: {}
-		};
-	}
+const Content = ({ checkboxesData, fetchedData }) => {
+	const getCheckedBoxes = () => {
+		let checkedBoxes = [];
+		Object.entries(checkboxesData).forEach(([key, value]) => {
+			if (value) {
+				checkedBoxes.push(key);
+			}
+		});
+		return checkedBoxes;
+	};
 
-	// componentDidMount() {
-	// 	fetch('https://swapi.co/api/people/')
-	// 		.then((res) => res.json())
-	// 		.then((data) => {
-	// 			this.setState({
-	// 				data: data.results
-	// 			});
-	// 		});
-	// }
+	const getFilteredContent = () => {
+		let filteredContent = [];
+		let chosenKeys = getCheckedBoxes();
+		let initialData = fetchedData;
 
-	render() {
-		// console.log(this.state.data);
-		return <div> Content </div>;
-	}
-}
+		filteredContent = Object.values(initialData).filter((item) =>
+			chosenKeys.includes(item['eye_color'])
+		);
+		return filteredContent;
+	};
 
-export default Content;
+	const displayContent = () => {
+		let filteredContent = getFilteredContent();
+
+		filteredContent.map((card) => {
+			return <Card data={card} />;
+		});
+	};
+
+	return <div>{displayContent()}</div>;
+};
+
+export default withContext(Content);
