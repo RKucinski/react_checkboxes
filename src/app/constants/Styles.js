@@ -19,16 +19,28 @@ export default {
 			display: 'inline-flex',
 			width: '100%',
 			justifyContent: 'space-evenly',
-			flexWrap: 'wrap'
+			flexWrap: 'wrap',
+			color: ColorsConstant.COMMON.DARK_GREY
 		}
 	},
 
 	CONTENT: {
 		container: {
-			color: ColorsConstant.COMMON.DARK_GREY
+			color: ColorsConstant.COMMON.DARK_GREY,
+			display: 'flex',
+			flexWrap: 'wrap',
+			alignSelf: 'center',
+			justifyContent: 'space-evenly'
 		},
 		flashMessage: {
 			color: ColorsConstant.COMMON.IBIZA_RED
+		},
+		cardContainer: {
+			width: 270,
+			margin: 10,
+			padding: 10,
+			border: `thin dotted ${ColorsConstant.COMMON.IBIZA_RED}`,
+			borderRadius: 10
 		}
 	},
 

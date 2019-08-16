@@ -20,7 +20,7 @@ const Checkboxes = ({ checkboxesData, updateCheckboxesContext }) => {
 		updateCheckboxesContext({ checkboxesData: checkboxes });
 	};
 
-	// Function to render common checkboxes. "prop" key is unique : ensured by defineCheckboxes function in Component did mount
+	// Function to render common checkboxes. "prop" key is unique : ensured by defineCheckboxes in Context
 	const renderCheckboxes = (data) => {
 		let arrayOfCheckboxes = [];
 		for (var prop in data) {
@@ -44,15 +44,17 @@ const Checkboxes = ({ checkboxesData, updateCheckboxesContext }) => {
 			? true
 			: false;
 		return (
-			<Fragment>
-				<label>Select All</label>
+			<div>
+				<label style={{ marginRight: 5, fontWeight: 'bold' }}>
+					Select All
+				</label>
 				<input
 					type='checkbox'
 					name='select all'
 					onChange={(e) => selectAll(e)}
 					checked={isSelectAllChecked}
 				/>
-			</Fragment>
+			</div>
 		);
 	};
 

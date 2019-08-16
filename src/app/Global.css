@@ -1,15 +1,18 @@
+/* I barely use global css files. 
+I prefer using a global js file (Styles.js) to dynamicly use styling properties or modules if I want to fo sass.
+Anyway, I will give a try to CSS-in-JS sooner or later */
+
 * {
 	font-family: 'Courier New', Courier, monospace;
 }
 
 .LayoutContainer {
 	margin: 0 auto;
-	max-width: 750px;
+	max-width: 850px;
 	padding: 1rem;
 
 	display: flex;
 	flex-direction: column;
-	/* min-height: 90vmin; */
 }
 
 .LayoutContent {

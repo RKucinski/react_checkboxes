@@ -1,7 +1,7 @@
 import React from 'react';
 import { withContext } from '../context/checkboxesContext';
-import Card from './Card';
 import { StylesConstant } from '../constants/index';
+import Card from './Card';
 
 const Content = ({ checkboxesData, fetchedData }) => {
 	const getCheckedBoxes = () => {
@@ -46,7 +46,7 @@ const Content = ({ checkboxesData, fetchedData }) => {
 	};
 
 	return (
-		<div>
+		<div style={StylesConstant.CONTENT.container}>
 			{displayContent()}
 			{displayDefaultContent()}
 		</div>

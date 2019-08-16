@@ -31,7 +31,7 @@ export default class ContextProvider extends Component {
 			try {
 				const data = await fetchData();
 				const json = await data.json();
-				// Parsing results // for example, I used 'eye_color'
+				// Parsing results // for example, I used 'eye_color' and chose to treat the data here
 				const definedCheckboxes = defineCheckboxes(
 					json.results,
 					'eye_color'
