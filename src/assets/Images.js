@@ -1,7 +1,9 @@
 import logo from './images/logo.svg';
+import spinner from './images/Loading_icon.gif';
 
 const Images = {
-	logo
+	logo,
+	spinner
 };
 
 export default Images;

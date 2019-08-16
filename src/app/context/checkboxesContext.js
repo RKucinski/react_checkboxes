@@ -9,7 +9,8 @@ export default class ContextProvider extends Component {
 		this.state = {
 			updateCheckboxesContext: this.updateContext,
 			checkboxesData: {},
-			fetchedData: {}
+			fetchedData: {},
+			isLoading: true
 		};
 	}
 
@@ -46,7 +47,8 @@ export default class ContextProvider extends Component {
 				// Saving both data types into context'state
 				this.setState({
 					checkboxesData: checkboxes,
-					fetchedData: json.results
+					fetchedData: json.results,
+					isLoading: false
 				});
 			} catch (e) {
 				console.error('Problem', e);
