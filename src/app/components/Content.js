@@ -1,6 +1,7 @@
 import React from 'react';
 import { withContext } from '../context/checkboxesContext';
 import Card from './Card';
+import { StylesConstant } from '../constants/index';
 
 const Content = ({ checkboxesData, fetchedData }) => {
 	const getCheckedBoxes = () => {
@@ -26,13 +27,30 @@ const Content = ({ checkboxesData, fetchedData }) => {
 
 	const displayContent = () => {
 		let filteredContent = getFilteredContent();
-
+		let contentToDisplay = [];
 		filteredContent.map((card) => {
-			return <Card data={card} />;
+			return contentToDisplay.push(<Card key={card.name} data={card} />);
 		});
+		return contentToDisplay;
 	};
 
-	return <div>{displayContent()}</div>;
+	const displayDefaultContent = () => {
+		let chosenKeys = getCheckedBoxes();
+		if (chosenKeys.length === 0) {
+			return (
+				<h4 style={StylesConstant.CONTENT.flashMessage}>
+					Please check a box to make me go away !
+				</h4>
+			);
+		}
+	};
+
+	return (
+		<div>
+			{displayContent()}
+			{displayDefaultContent()}
+		</div>
+	);
 };
 
 export default withContext(Content);

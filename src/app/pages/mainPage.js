@@ -8,7 +8,7 @@ import '../Global.css';
 const MainPage = () => {
 	return (
 		<div style={StylesConstant.MAIN_PAGE.mainContainer}>
-			<p>MainPage</p>
+			<h2>What color are your eyes ?</h2>
 			<Checkboxes />
 			<Content />
 		</div>

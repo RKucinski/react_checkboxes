@@ -58,8 +58,7 @@ const Checkboxes = ({ checkboxesData, updateCheckboxesContext }) => {
 
 	return (
 		<Fragment>
-			<h1>Checkboxes</h1>
-			<div style={StylesConstant.MAIN_PAGE.checkboxesContainer}>
+			<div style={StylesConstant.CHECKBOXES.container}>
 				{renderSelectAllCheckbox(checkboxesData)}
 				{renderCheckboxes(checkboxesData)}
 			</div>
